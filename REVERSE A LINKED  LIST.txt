@@ -1,0 +1,16 @@
+REVERSE A LINKED  LIST
+SinglyLinkedListNode* reverse(SinglyLinkedListNode *llist)
+{
+	SinglyLinkedListNode *present = llist;
+	SinglyLinkedListNode * future;
+	SinglyLinkedListNode *past = nullptr;
+	while (present != nullptr)
+	{
+		future = present->next;
+		present->next = past;
+		past = present;
+		present = future;
+	}
+
+	return past;
+}
